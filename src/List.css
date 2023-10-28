@@ -1,0 +1,54 @@
+.left-container{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  height: 300px;
+  border-radius: 15px;
+  background: rgb(27, 26, 26);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 15px;
+  box-shadow: -5px 5px 1px 0px #004d92;
+}
+.element {
+  display: flex;
+  justify-content: space-between;
+  color: #fefefe;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  padding: 6px 15px;
+  border-left: 2px solid grey;
+  border-bottom: 2px solid grey;
+  cursor: pointer;
+}
+.element:hover:not(.active) {
+  color: #3775bb;
+}
+.element > div {
+  display: inline-block;
+}
+.element.active {
+  background-color: #004d92;
+  color: #fff; 
+  border-left: 2px solid #0d88f5;
+}
+.episode-class{
+  width: auto;
+  float: left;
+}
+.title-class{
+  width: auto;
+  padding: 0 10px;
+}
+.release-class{
+  width: auto;
+  float: right;
+}

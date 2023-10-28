@@ -1,0 +1,19 @@
+.details-container{
+    text-align: left;
+    padding: 25px 50px;
+}
+.title {
+    font-size: 30px;
+    line-height: 22px;
+    color: #000;
+    font-weight: 600;
+}
+.director{
+    margin-top: 20px;
+}
+.image-poster {
+    max-width: 150px;
+    height: auto;
+    float: left;
+    padding-right: 20px;
+}
