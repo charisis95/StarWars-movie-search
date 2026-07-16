@@ -1,0 +1,23 @@
+.main-layout {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 12%, rgb(45 76 130 / 20%), transparent 28rem),
+    radial-gradient(circle at 85% 65%, rgb(84 49 130 / 14%), transparent 32rem),
+    #05070d;
+}
+
+.main-layout::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.42;
+  background-image:
+    radial-gradient(circle, rgb(255 255 255 / 75%) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgb(255 255 255 / 45%) 0 1px, transparent 1.5px);
+  background-position: 0 0, 37px 52px;
+  background-size: 96px 96px, 137px 137px;
+}

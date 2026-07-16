@@ -1,0 +1,39 @@
+.not-found-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px;
+  text-align: center;
+  background: var(--color-surface-muted);
+}
+
+.not-found-screen-code {
+  margin: 0 0 10px;
+  color: var(--color-accent-strong);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.not-found-screen h1 {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(30px, 6vw, 54px);
+  line-height: 1.1;
+}
+
+.not-found-screen > p:not(.not-found-screen-code) {
+  margin: 18px 0 26px;
+  color: var(--color-ink-muted);
+}
+
+.not-found-screen a {
+  padding: 11px 18px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--color-accent-strong);
+  border-radius: 8px;
+}

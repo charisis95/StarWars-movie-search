@@ -1,0 +1,42 @@
+.saga-screen {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.saga-screen-content {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(20px, 3vw, 42px);
+  width: min(1480px, 100%);
+  min-height: calc(100vh - 116px);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 58px) clamp(18px, 5vw, 72px);
+}
+
+.saga-screen-list,
+.saga-screen-details {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: rgb(12 16 26 / 78%);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.saga-screen-list {
+  position: relative;
+  align-self: start;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .saga-screen-content {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .saga-screen-list {
+    border-right: 1px solid var(--color-border);
+  }
+}

@@ -1,0 +1,213 @@
+.search-controls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 116px;
+  padding: 22px clamp(20px, 5vw, 72px);
+  color: var(--color-ink);
+  background: rgb(6 9 16 / 74%);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(20px);
+}
+
+.search-controls-heading {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-controls-emblem {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+  border: 1px solid rgb(244 211 94 / 32%);
+  border-radius: 50%;
+  background: rgb(244 211 94 / 6%);
+  box-shadow: inset 0 0 20px rgb(244 211 94 / 7%);
+  place-items: center;
+}
+
+.search-controls-emblem svg {
+  width: 30px;
+  height: 30px;
+}
+
+.search-controls-heading h1 {
+  margin: 4px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.search-controls-heading h1 span {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.search-controls-eyebrow {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.search-controls-toolbar {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: 12px;
+  max-width: 740px;
+}
+
+.search-controls-order {
+  flex: 0 0 190px;
+}
+
+.search-controls-order .MuiOutlinedInput-root {
+  width: 100%;
+  height: 46px;
+  color: var(--color-ink);
+  background: rgb(255 255 255 / 5%);
+  border-radius: 12px;
+  font-family: inherit;
+}
+
+.search-controls-order .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-border);
+}
+
+.search-controls-order .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgb(244 211 94 / 45%);
+}
+
+.search-controls-order .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-accent);
+  border-width: 1px;
+}
+
+.search-controls-order .MuiSelect-select {
+  padding-left: 14px;
+}
+
+.search-controls-order .MuiSvgIcon-root {
+  color: var(--color-accent);
+  transition: color 180ms ease;
+}
+
+.search-controls-order .MuiSelect-iconOpen {
+  transform: none;
+}
+
+.search-controls-order-menu .MuiPaper-root {
+  margin-top: 6px;
+  color: var(--color-ink);
+  background: #151b27;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgb(0 0 0 / 45%);
+}
+
+.search-controls-order-menu .MuiMenuItem-root {
+  min-height: 46px;
+  font-family: inherit;
+}
+
+.search-controls-order-menu .MuiMenuItem-root:hover {
+  background: rgb(255 255 255 / 7%);
+}
+
+.search-controls-order-menu .MuiMenuItem-root.Mui-selected,
+.search-controls-order-menu .MuiMenuItem-root.Mui-selected:hover {
+  color: var(--color-accent);
+  background: rgb(244 211 94 / 12%);
+}
+
+.search-controls-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: min(420px, 100%);
+  height: 46px;
+  padding: 0 14px;
+  background: rgb(255 255 255 / 5%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.search-controls-form:focus-within {
+  border-color: var(--color-accent);
+  background: rgb(255 255 255 / 8%);
+  box-shadow: var(--focus-ring);
+}
+
+.search-controls-icon {
+  flex: 0 0 auto;
+  margin-right: 9px;
+  color: var(--color-ink-muted);
+}
+
+.search-controls-input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  color: var(--color-ink);
+  border: 0;
+  outline: 0;
+}
+
+.search-controls-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-controls-reset {
+  display: grid;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  place-items: center;
+}
+
+@media (max-width: 900px) {
+  .search-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-controls-toolbar {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-controls {
+    gap: 20px;
+    padding-block: 22px;
+  }
+
+  .search-controls-toolbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-controls-order,
+  .search-controls-form {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
