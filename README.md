@@ -2,6 +2,10 @@
 
 A responsive film browser for the main Star Wars saga. Film data comes from SWAPI and poster images come from TMDB.
 
+## Live Demo
+
+[View the live application](https://star-wars-movie-search.vercel.app/)
+
 ## Features
 
 - Search films by title
