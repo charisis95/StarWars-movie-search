@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Star Wars Saga
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive film browser for the main Star Wars saga. Film data comes from SWAPI and poster images come from TMDB.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Search films by title
+- Sort by episode or release date
+- View opening crawls, credits, release dates, and posters
+- URL-based film selection
+- Responsive desktop, tablet, and mobile layouts
+- Loading, error, empty, and not-found states
 
-### `npm start`
+## Technology
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18 and TypeScript
+- Vite
+- React Router
+- Material UI
+- Vitest and Testing Library
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup
 
-### `npm test`
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Copy `.env.example` to `.env.local` and add a TMDB API key:
 
-### `npm run build`
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_key
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Values prefixed with `VITE_` are included in the browser bundle. Use a backend proxy if the key must remain private in production.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Commands
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run dev
+npm run build
+npm run test
+npm run lint
+npm run typecheck
+```
 
-### `npm run eject`
+## Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+src/
+  components/  Reusable interface components
+  hooks/       Data-loading hooks
+  layouts/     Shared page layouts
+  models/      API and application types
+  routes/      Route configuration
+  screens/     Route-level screens
+  services/    SWAPI and TMDB requests
+  utils/       Shared formatting and error helpers
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a public film browser and has no user accounts or roles.

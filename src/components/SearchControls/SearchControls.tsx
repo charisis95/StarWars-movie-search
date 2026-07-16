@@ -1,8 +1,5 @@
-import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import { FormControl, MenuItem, Select } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material';
-import { useState } from 'react';
 import type { FormEvent } from 'react';
 import type { MovieOrder } from '../../models/movie';
 import type { SearchControlsProps } from './SearchControls.types';
@@ -14,7 +11,6 @@ export function SearchControls({
   onFilterChange,
   onOrderChange,
 }: SearchControlsProps) {
-  const [isOrderMenuOpen, setIsOrderMenuOpen] = useState(false);
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
   const handleOrderChange = (event: SelectChangeEvent<MovieOrder>) => {
     onOrderChange(event.target.value as MovieOrder);
@@ -38,13 +34,7 @@ export function SearchControls({
         <FormControl className="search-controls-order" size="small">
           <Select<MovieOrder>
             value={order}
-            open={isOrderMenuOpen}
             onChange={handleOrderChange}
-            onClose={() => setIsOrderMenuOpen(false)}
-            onOpen={() => setIsOrderMenuOpen(true)}
-            IconComponent={
-              isOrderMenuOpen ? KeyboardArrowUpRoundedIcon : KeyboardArrowDownRoundedIcon
-            }
             inputProps={{ 'aria-label': 'Sort films' }}
             MenuProps={{ className: 'search-controls-order-menu' }}
           >

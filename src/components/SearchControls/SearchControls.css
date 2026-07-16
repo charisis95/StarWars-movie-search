@@ -100,11 +100,11 @@
 
 .search-controls-order .MuiSvgIcon-root {
   color: var(--color-accent);
-  transition: color 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .search-controls-order .MuiSelect-iconOpen {
-  transform: none;
+  transform: rotate(180deg);
 }
 
 .search-controls-order-menu .MuiPaper-root {

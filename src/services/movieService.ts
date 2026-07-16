@@ -1,11 +1,8 @@
-import type { FilmsResponse, Movie, MoviePoster, TmdbSearchResponse } from '../models/movie';
+import type { FilmsResponse, Movie, TmdbSearchResponse } from '../models/movie';
 
 const filmsEndpoint = 'https://swapi.dev/api/films/?format=json';
 const tmdbSearchEndpoint = 'https://api.themoviedb.org/3/search/movie';
 const tmdbImageBaseUrl = 'https://image.tmdb.org/t/p/w500';
-const tmdbTitleAliases: Record<string, string> = {
-  'A New Hope': 'Star Wars',
-};
 
 async function getJson<T>(url: URL | string, signal?: AbortSignal): Promise<T> {
   const response = await fetch(url, { signal });
@@ -27,9 +24,9 @@ export async function getMoviePoster(
   releaseYear: string,
   apiKey: string,
   signal?: AbortSignal,
-): Promise<MoviePoster> {
+): Promise<string> {
   const url = new URL(tmdbSearchEndpoint);
-  url.searchParams.set('query', tmdbTitleAliases[title] ?? title);
+  url.searchParams.set('query', title === 'A New Hope' ? 'Star Wars' : title);
   url.searchParams.set('api_key', apiKey);
   url.searchParams.set('include_adult', 'false');
   url.searchParams.set('language', 'en-US');
@@ -42,5 +39,5 @@ export async function getMoviePoster(
     throw new Error('A poster could not be found.');
   }
 
-  return { posterUrl: `${tmdbImageBaseUrl}${movieWithPoster.poster_path}` };
+  return `${tmdbImageBaseUrl}${movieWithPoster.poster_path}`;
 }

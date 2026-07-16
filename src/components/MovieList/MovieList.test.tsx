@@ -11,14 +11,6 @@ const movie: Movie = {
   director: 'George Lucas',
   producer: 'Gary Kurtz',
   release_date: '1977-05-25',
-  characters: [],
-  planets: [],
-  starships: [],
-  vehicles: [],
-  species: [],
-  created: '',
-  edited: '',
-  url: 'https://swapi.dev/api/films/1/',
 };
 
 describe('MovieList', () => {

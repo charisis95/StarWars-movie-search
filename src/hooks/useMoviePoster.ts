@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
-import type { MoviePoster } from '../models/movie';
 import { getMoviePoster } from '../services/movieService';
 import { getErrorMessage } from '../utils/getErrorMessage';
 
-export interface MoviePosterState {
-  poster: MoviePoster | null;
+interface MoviePosterState {
+  posterUrl: string | null;
   isLoading: boolean;
   errorMessage: string | null;
 }
 
 export function useMoviePoster(title?: string, releaseDate?: string): MoviePosterState {
-  const [poster, setPoster] = useState<MoviePoster | null>(null);
+  const [posterUrl, setPosterUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const apiKey = import.meta.env.VITE_TMDB_API_KEY;
@@ -19,13 +18,13 @@ export function useMoviePoster(title?: string, releaseDate?: string): MoviePoste
     const abortController = new AbortController();
 
     if (!title || !releaseDate) {
-      setPoster(null);
+      setPosterUrl(null);
       setErrorMessage(null);
       return () => abortController.abort();
     }
 
     if (!apiKey) {
-      setPoster(null);
+      setPosterUrl(null);
       setErrorMessage('Add VITE_TMDB_API_KEY to your environment to load posters.');
       return () => abortController.abort();
     }
@@ -38,8 +37,8 @@ export function useMoviePoster(title?: string, releaseDate?: string): MoviePoste
       try {
         setIsLoading(true);
         setErrorMessage(null);
-        setPoster(null);
-        setPoster(
+        setPosterUrl(null);
+        setPosterUrl(
           await getMoviePoster(
             requestedTitle,
             requestedReleaseYear,
@@ -62,5 +61,5 @@ export function useMoviePoster(title?: string, releaseDate?: string): MoviePoste
     return () => abortController.abort();
   }, [apiKey, releaseDate, title]);
 
-  return { poster, isLoading, errorMessage };
+  return { posterUrl, isLoading, errorMessage };
 }

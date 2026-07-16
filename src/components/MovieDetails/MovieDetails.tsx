@@ -5,8 +5,7 @@ import type { MovieDetailsProps } from './MovieDetails.types';
 import './MovieDetails.css';
 
 export function MovieDetails({ movie }: MovieDetailsProps) {
-  const { poster, isLoading, errorMessage } = useMoviePoster(movie.title, movie.release_date);
-  const posterUrl = poster?.posterUrl ?? null;
+  const { posterUrl, isLoading, errorMessage } = useMoviePoster(movie.title, movie.release_date);
 
   return (
     <article className="movie-details">

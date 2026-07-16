@@ -3,7 +3,7 @@ import type { Movie } from '../models/movie';
 import { getMovies } from '../services/movieService';
 import { getErrorMessage } from '../utils/getErrorMessage';
 
-export interface MoviesState {
+interface MoviesState {
   movies: Movie[];
   isLoading: boolean;
   errorMessage: string | null;
